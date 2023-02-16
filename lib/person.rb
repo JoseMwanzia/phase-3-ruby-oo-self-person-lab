@@ -56,14 +56,31 @@ class Person
 
     def call_friend(friend)
         self.happiness += 3
-        self.call_frien
+        friend.happiness += 3
+        "Hi #{friend.name}! It's #{self.name}. How are you?"
+    end
+
+    def start_conversation(friend, topic)
+        @topic = topic
+        if @topic == 'politics' 
+            self.happiness -= 2
+            friend.happiness -= 2
+            "blah blah partisan blah lobbyist"
+        
+        elsif @topic == 'weather'
+            self.happiness += 1
+            friend.happiness += 1
+            "blah blah sun blah rain"
+        else 
+            "blah blah blah blah blah"
+            # binding.pry
+        end
     end
 end
+
 
 
 # blake = Person.new("Blake")
 # puts blake.name
 # puts blake.bank_account
 
-
-# binding.pry
